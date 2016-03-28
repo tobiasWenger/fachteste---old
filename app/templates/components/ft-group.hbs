@@ -1,0 +1,14 @@
+<div class="item row" {{action "deleteGroup" on="swipeLeft"}}>
+	<a href="" class="col plain" {{action 'increaseWomen'}}>
+		{{group.women}}
+	</a>
+	<a href="" class="col plain" {{action 'increaseMen'}}>
+		{{group.men}}
+	</a>
+	<div class="col padding-small">
+		{{input type="number" pattern="[0-9]*" value=group.score class="input-score" placeholder="Punkte"}}
+	</div>
+	<div class="col">
+		<span>{{to-precision group.mark 3}}</span>
+	</div>
+</div>

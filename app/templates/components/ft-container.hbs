@@ -1,0 +1,40 @@
+<div class="bar bar-header">
+	{{!--#link-to 'ft-selection' class="button button-icon icon ion-ios-arrow-left"}}{{/link-to--}}
+	<a {{action 'back'}} class="button button-icon icon ion-ios-arrow-left"></a>
+  <h1 class="title">
+  	{{#if showList}}
+  		Gespeicherte {{ft.type}}
+  	{{else}}
+  		{{ft.type}} ({{to-precision ft.mark 3}})
+  	{{/if}}
+  </h1>
+  <a {{action 'toggleShowList'}} class="button button-icon icon ion-ios-list-outline"></a>
+</div>
+
+<div class="content">
+
+	{{#liquid-if showList class="liquid-list"}}
+		<div class="list">
+		{{#each sortedDate as |ft|}}
+			 <a class="item item-icon-right" href="#" {{action 'selectFt' ft}}>
+		    {{moment-format ft.date 'DD.MM.YYYY'}}
+		    {{#if ft.mark}}<span class="right">({{to-precision ft.mark 3}})</span>{{/if}}
+		    <i class="icon ion-ios-arrow-right"></i>
+		  </a>
+		{{/each}}
+		</div>
+	{{else}}
+		<div class="button-bar button-stable with-padding">
+		  <a class="button button-outline button-dark button-small" {{action 'clear'}}>
+		  	Neu
+		  </a>
+		  <a class="button button-outline button-dark button-small" {{action 'save'}}>
+		  	Speichern {{#if showCheckmark}}<span class="right">{{fa-icon icon="check"}}</span>{{/if}}
+		  </a>
+		</div>
+
+		{{#each ft.tasks as |task|}}
+			{{ft-aufgabe task=task hideCheck=(action 'hideCheck')}}
+		{{/each}}
+	{{/liquid-if}}
+</div>

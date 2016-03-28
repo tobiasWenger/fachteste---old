@@ -1,0 +1,25 @@
+<div class="card">
+	  <div class="item item-divider">
+	    Aufgabe {{task.number}} <span class="right">{{to-precision task.mark 3}}</span>
+	  </div>
+	  <div class="item row item-divider">
+			<div class="col">
+				{{fa-icon icon="female"}}
+			</div>
+			<div class="col">
+				{{fa-icon icon="male"}}
+			</div>
+			<div class="col">
+				{{fa-icon icon="bullseye"}}
+			</div>
+			<div class="col">
+				{{fa-icon icon="graduation-cap"}}
+			</div>
+		</div>
+		{{#each task.groups as |group|}}
+			{{ft-group group=group hideCheck=hideCheck}}
+		{{/each}}
+	  <div class="item item-divider center" {{action 'addGroup'}}>
+	  	{{fa-icon icon="plus"}}
+	  </div>
+	</div>

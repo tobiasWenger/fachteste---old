@@ -1,0 +1,16 @@
+<div class="bar bar-header">
+  <h1 class="title">Timer</h1>
+</div>
+
+
+<div class="content">
+	<div id="timer">
+	  <span class="minutes liquid-slide-up">{{liquid-bind minutes}}</span>:<span class="seconds liquid-slide-up">{{liquid-bind seconds}}</span>
+	</div>
+
+	<div class="button-bar">
+	  <a {{action 'start'}} class="button">{{fa-icon icon="play" size="lg"}}</a>
+	  <a {{action 'stop'}} class="button">{{fa-icon icon="stop" size="lg"}}</a>
+	  <a {{action 'reset'}} class="button">{{fa-icon icon="undo" size="lg"}}</a>
+	</div>
+</div>

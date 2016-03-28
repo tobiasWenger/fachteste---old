@@ -1,0 +1,94 @@
+
+.bar-footer {
+	position: fixed;
+}
+
+.content {
+	margin-top: 60px;
+	margin-bottom: 60px;
+
+	&.with-padding {
+		padding: 0 10px;
+	}
+}
+
+.nav {
+	width: 70%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+}
+
+input.input-score {
+	width: 100%;
+  font-size: 16px;
+	text-align: center;
+}
+
+.col {
+	text-align: center;
+	padding: 10px 5px;
+
+  &.padding-small {
+    padding: 5px 5px;
+  }
+}
+
+a.plain {
+  color: #444;
+  text-decoration: none;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.tabs {
+	i {
+		margin-top: 9px;
+	}
+}
+
+.button-bar {
+	&.with-padding {
+		padding: 0 10px;
+	}
+}
+
+.delete-confirm {
+	margin-top: 10px;
+
+	a:first-child {
+		margin-right: 10px;
+	}
+}
+
+#timer {
+  font-size: 48px;
+  line-height: 66px;
+  text-align: center;
+  padding: 40px 0px;
+
+  .liquid-container {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.minutes {
+		.liquid-child {
+	    width: 1em;
+	  }
+	}
+
+	.seconds {
+		.liquid-child {
+	    width: 1.5em;
+	  }
+	}
+  
+}

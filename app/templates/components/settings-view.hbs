@@ -1,0 +1,36 @@
+
+<div class="bar bar-header">
+  <h1 class="title">Einstellungen</h1>
+</div>
+
+
+<div class="content">
+	<div class="card">
+	  <div class="item item-divider">
+	    Jahr
+	  </div>
+	  <div class="item item-text-wrap">
+	    Die Noten werden anhand der Notentabelle für 2016 berechnet.
+	  </div>
+	</div>
+
+	<div class="card">
+	  <div class="item item-divider">
+	    Speicher
+	  </div>
+	  <div class="item item-text-wrap">
+	    
+	  {{#liquid-if showDeleteConfirm}}
+	  	Alle gespeicherten Daten werden gelöscht?
+	  	<div class="button-bar delete-confirm">
+			  <a class="button button-dark" {{action 'toggleShowDeleteConfirm'}}>Abbrechen</a>
+			  <a class="button button-assertive" {{action 'deleteConfirmed'}}>Löschen</a>
+			</div>
+	  {{else}}
+	    <button class="button button-block button-dark" {{action 'toggleShowDeleteConfirm'}}>
+			  Alle Daten löschen
+			</button>
+		{{/liquid-if}}
+	  </div>
+	</div>
+</div>
