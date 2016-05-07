@@ -10,6 +10,8 @@ export default Ember.Component.extend(CreateDefaultTasks, {
   sortingDate: ['date:desc'],
   sortedDate: Ember.computed.sort('fts', 'sortingDate'),
 
+  savedFts: Ember.computed.filterBy('sortedDate', 'isNew', false),
+
 
 	ft: Ember.computed('sortedAccessed.@each.lastAccessed', function() {
 		return this.get('sortedAccessed.firstObject');
@@ -34,6 +36,33 @@ export default Ember.Component.extend(CreateDefaultTasks, {
 		selectFt(ft) {
 			ft.set('lastAccessed', Date.now());
 			this.set('showList', false);
+		},
+
+		deleteFt(ft) {
+
+			const type = ft.get('type');
+			const fts = this.get('fts');
+			let tasks = [];
+
+			ft.get('tasks').forEach((task) => {
+				tasks.push(task.get('size'));
+			});
+
+			ft.get('tasks').forEach((task) => {
+				task.get('groups').forEach((group) => {
+					group.destroyRecord();
+				});
+				task.destroyRecord();
+			});
+
+			ft.destroyRecord();
+
+			this.set('showList', false);
+
+
+			let newFt = this.createDefault(tasks, type);
+
+			fts.pushObject(newFt);
 		},
 
 		toggleShowList() {

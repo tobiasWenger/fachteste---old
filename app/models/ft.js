@@ -4,7 +4,6 @@ import Ember from 'ember';
 export default DS.Model.extend({
 	user: DS.belongsTo('user', { inverse: null }),
   tasks: DS.hasMany('ft-aufgabe'),
-  //displayed: DS.attr('boolean'),
 
   type: DS.attr('string'),
   date: DS.attr('number'),

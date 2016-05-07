@@ -1,11 +1,14 @@
+button {
+	width: 100%;
+}
 
 .bar-footer {
 	position: fixed;
 }
 
 .content {
-	margin-top: 60px;
-	margin-bottom: 60px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 
 	&.with-padding {
 		padding: 0 10px;

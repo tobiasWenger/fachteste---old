@@ -1,0 +1,4 @@
+ <a class="item" href="#" {{action selectFt ft}} {{action deleteFt ft on="swipeLeft"}}>
+  {{moment-format ft.date 'DD.MM.YYYY'}}
+  {{#if ft.mark}}<span class="right">({{to-precision ft.mark 3}})</span>{{/if}}
+</a>
